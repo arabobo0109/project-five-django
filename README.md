@@ -6,6 +6,7 @@ Commits:
 2. Created superuser. Added accounts templates and log in functionality.
 3. Added template inheritance from base.html, and authorisation.
 4. Added registration and profile functionality.
+5. Added password re-set functionality.
 
 Technologies uses:
 Django - 
