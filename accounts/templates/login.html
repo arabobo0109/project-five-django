@@ -1,34 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Authentication</title>
-</head>
-<body>
-    <h1>Log in</h1>
-    <nav>
-        <ul>
-            <li><a href="{% url 'login' %}">Log in</a></li>
-            <li><a href="{% url 'logout' %}">Log out</a></li>
-            <li><a href="#">Register</a></li>
-            <li><a href="#">Profile</a></li>
-        </ul>
-    </nav>
-    <hr>
-    {% if messages %}
-    <div>
-        {% for message in messages %}
-            {{ message }}
-        {% endfor %}
-    </div>
-    {% endif %}
-    
-    <form method="POST">
-        {% csrf_token %}
-        {{ login_form }}
-        <button type="submit">Log in</button>
-    </form>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block page_title %}Login Page{% endblock %}
+{% block page_heading %}Home{% endblock %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %} {{ login_form }}
+    <button type="submit">Login</button>
+</form>
+{% endblock %}
