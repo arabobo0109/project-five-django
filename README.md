@@ -5,7 +5,7 @@ Commits:
 1. Initial commit. 
 2. Created superuser. Added accounts templates and log in functionality.
 3. Added template inheritance from base.html, and authorisation.
-4. 
+4. Added registration and profile functionality.
 
 Technologies uses:
 Django - 

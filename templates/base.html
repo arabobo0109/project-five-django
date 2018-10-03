@@ -11,10 +11,10 @@
     <nav>
         <ul>
              {% if user.is_authenticated %}
-                <li><a href="#">Profile</a></li>
+                <li><a href="{% url 'profile' %}">Profile</a></li>
                 <li><a href="{% url 'logout' %}">Log Out</a></li>
             {%  else %}
-                <li><a href="#">Register</a></li>
+                <li><a href="{% url 'registration' %}">Register</a></li>
                 <li><a href="{% url 'login' %}">Log In</a></li>
             {% endif %}
         </ul>
