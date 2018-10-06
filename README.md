@@ -16,7 +16,8 @@ Commits:
 12. Added library for Bootstrap code, addded posts templates, installed Djang-Forms-Bootstrap.
 13. Updated requirements.txt.
 14. Removed author bug.
-15. Deployed to Heroku, after installing dj-database-url, psycopg2, whitenoise, gunicorn
+15. Deployed to Heroku, after installing requirements.
+16. Created ecommerce, cart and search apps.
 
 Technologies uses:
 Django - 
