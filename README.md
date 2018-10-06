@@ -11,11 +11,12 @@ Commits:
 7. Created virtualenvironment, added requirements.txt and created blog, .gitignore.
 8. Added env.py and updated .gitignore.
 9. Integrated Travis testing.
-10. 
+10. Addressed Travis bug.
+11. Started posts app. Installed pillow. 
 
 Technologies uses:
 Django - 
- 
+Pillow - used to open images in python
 
 Testing:
 
