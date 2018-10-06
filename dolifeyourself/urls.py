@@ -7,6 +7,7 @@ from accounts.views import index
 from accounts import urls as accounts_urls
 from ecommerce import urls as urls_products
 from cart import urls as urls_cart
+from checkout import urls as urls_checkout
 from search import urls as urls_search
 from ecommerce.views import all_products
 from .settings import MEDIA_ROOT
@@ -20,6 +21,7 @@ urlpatterns = [
     url(r'^accounts/', include(accounts_urls)),
     url(r'^products/', include(urls_products)),
     url(r'^cart/', include(urls_cart)),
+    url(r'^checkout/', include(urls_checkout)),
     url(r'^search/', include(urls_search)),
 ]
 
