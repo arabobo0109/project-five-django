@@ -14,6 +14,8 @@ Commits:
 10. Addressed Travis bug.
 11. Started posts app. Installed pillow. 
 12. Added library for Bootstrap code, addded posts templates, installed Djang-Forms-Bootstrap.
+13. Updated requirements.txt.
+14. 
 
 Technologies uses:
 Django - 
