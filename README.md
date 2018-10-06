@@ -13,10 +13,12 @@ Commits:
 9. Integrated Travis testing.
 10. Addressed Travis bug.
 11. Started posts app. Installed pillow. 
+12. Added library for Bootstrap code, addded posts templates, installed Djang-Forms-Bootstrap.
 
 Technologies uses:
 Django - 
 Pillow - used to open images in python
+Djang-Forms-Bootstrap - to allow easy rendering of forms
 
 Testing:
 
