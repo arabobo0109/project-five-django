@@ -15,14 +15,18 @@ Commits:
 11. Started posts app. Installed pillow. 
 12. Added library for Bootstrap code, addded posts templates, installed Djang-Forms-Bootstrap.
 13. Updated requirements.txt.
-14. 
+14. Removed author bug.
+15. Deployed to Heroku, after installing dj-database-url, psycopg2, whitenoise, gunicorn
 
 Technologies uses:
 Django - 
 Pillow - used to open images in python
 Djang-Forms-Bootstrap - to allow easy rendering of forms
+DJ-Database-url - allows access to postgreSQL instead of standard database driver used in Django
+Psycopg2 - allows adaption to postgreSQL for python
+Whitenoise - hosts static files on Heroku
+Gunicorn - WSGI HTTP server for python
 
 Testing:
-
 Travis - 
 [![Build Status](https://travis-ci.org/sarahcrosby/project-five-django.svg?branch=master)](https://travis-ci.org/sarahcrosby/project-five-django)
