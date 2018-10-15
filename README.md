@@ -18,6 +18,10 @@ Commits:
 14. Removed author bug.
 15. Deployed to Heroku, after installing requirements.
 16. Created ecommerce, cart and search apps.
+17. Installed Stripe and checkout app.
+18. Added member's home page, content app, worked on layout and search page.
+19. Implemented Bootstrap template.
+20. 
 
 Technologies uses:
 Django - 
@@ -27,6 +31,7 @@ DJ-Database-url - allows access to postgreSQL instead of standard database drive
 Psycopg2 - allows adaption to postgreSQL for python
 Whitenoise - hosts static files on Heroku
 Gunicorn - WSGI HTTP server for python
+Stripe - allows us to take bank card payments
 
 Testing:
 Travis - 

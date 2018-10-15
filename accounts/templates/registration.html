@@ -1,13 +1,35 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
 
-{% block page_title %}Registration Page{% endblock %}
+ {% block page_title %} Do Life Yourself - Member Registration {% endblock %}
 
-{% block page_heading %}User Registration{% endblock %}
+ {% block content %}
+ 
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>Registration</h1>
+              <span class="subheading">Join our inner circle</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  </head>
 
-{% block content %}
-<form method="POST">
-    {% csrf_token %}
-    {{ registration_form.as_p }}
-    <button type="submit">Register</button>
-</form>
-{% endblock %}
+  <body>
+   
+    <!-- Main Content -->
+    <form method="POST">
+        {% csrf_token %}
+        {{ registration_form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+    
+  </body>
+
+
+ {% endblock %}

@@ -9,7 +9,7 @@ def index(request):
     """Loads index.html"""
     return render(request, 'index.html')
   
-    
+  
 @login_required    
 def logout(request):
     """Logs the user out"""
@@ -66,7 +66,22 @@ def registration(request):
     return render(request, 'registration.html', 
         {"registration_form": registration_form})
 
+
 def user_profile(request):
     """Returns the user's profile page"""
     user = User.objects.get(email=request.user.email)
     return render(request, 'profile.html', {"profile": user})
+
+
+@login_required
+def members_home(request):
+    """Returns the signed in member's home page"""
+    user = User.objects.get(email=request.user.email)
+    return render(request, 'membershome.html', {"profile": user})
+    
+    
+def non_members_home(request):
+    """
+    Returns a page explaining the benefits of signing up, if the user hasn't already
+    """
+    return render(request, 'nonmembershome.html')

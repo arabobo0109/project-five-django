@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Search{% endblock %}
+
+{% block page_heading %}Search{% endblock %}
+
+{% block content %}
+
+<div>
+    
+<h1>
+    Welcome to the search page. 
+</h1>
+<p>
+    Here you can search all projects on the website.
+</p>
+<div class="container">
+        <div class="display">
+            <form action="{% url 'search' %}" method="get">
+                <input type="text" name="q">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+</div>
+
+
+{% endblock %}

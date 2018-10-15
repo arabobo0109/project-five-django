@@ -5,6 +5,10 @@ def view_cart(request):
     return render(request, "cart.html")
     
 def add_to_cart(request, id):
+    """Ensures at least one item will be added, else raises error"""
+    if int(len(request.POST.get('quantity'))) == 0:
+        print('Error raised')
+        
     """Adds the user specified quantity of the product to the cart"""
     quantity=int(request.POST.get('quantity'))
     

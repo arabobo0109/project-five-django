@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-2 col-sm-3 text-center">
+            <a class="story-img" href="#">
+                <img src="/media/img/profile.jpg" class="img-circle">
+            </a>
+            <p><span class="boldtext">Author:</span> Sarah
+            </p>
+        </div>
+        <div class="col-md-10 col-sm-9">
+            {% if content.image1 %}
+                <img class="img-blogpost" src="/media/{{ .image1 }}">
+            {% endif %}
+            {% if content.image2 %}
+                <img class="img-blogpost" src="/media/{{ .image2 }}">
+            {% endif %}
+            {% if content.image3 %}
+                <img class="img-blogpost" src="/media/{{ .image3 }}">
+            {% endif %}
+            {% if content.image4 %}
+                <img class="img-blogpost" src="/media/{{ .image4 }}">
+            {% endif %}
+            {% if content.image5 %}
+                <img class="img-blogpost" src="/media/{{ .image5 }}">
+            {% endif %}
+            <h3>{{ content.title }}</h3>
+            <div class="row">
+                <div class="col-xs-9">
+                    <p>{{ content.article }}</p>
+                    <p><span class="boldtext">Published on:</span> {{ content.published_date }} </p>
+                    <p><span class="boldtext">Views:</span> {{content.views}}</p>
+                    <a href="{% url 'get_content' %}" class="btn btn-default">Back To Content</a>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

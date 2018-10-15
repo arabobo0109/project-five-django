@@ -1,5 +1,27 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} 
+ 
+ {% block page_title %} Do Life Yourself - Member's Home Page {% endblock %}
+
+ {% block content %}
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>Premium Content</h1>
+              <span class="subheading">Have your say and shape our future content</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  </head>
+
+  <body>
+   
 
 <div class="row">
 {% for product in products %}
@@ -26,4 +48,7 @@
 </div>
 {% endfor %} 
 </div>
-{% endblock %}
+  </body>
+
+
+ {% endblock %}

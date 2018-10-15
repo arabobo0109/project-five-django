@@ -13,6 +13,8 @@
 {% endblock %}
 
 {% block content %}
+
+{% if product_count > 0 %}
 <div class="row row-flex">
     {% for item in cart_items %}
     
@@ -54,5 +56,10 @@
         <input class="btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
     </div>
 </form>
+{% else %}
+    <p align="center">
+        There is nothing in your cart. <a href="{% url 'products' %}">Please add some products.</a>
+    </p>
+{% endif %}
 
 {% endblock %}
