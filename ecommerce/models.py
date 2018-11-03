@@ -5,9 +5,14 @@ Rendering a product for sale
 """
 class Product(models.Model):
     name = models.CharField(max_length=254, default='')
-    description = models.TextField()
-    price = models.DecimalField(max_digits=6, decimal_places=2)
-    image = models.ImageField(upload_to='img')
+    strap = models.CharField(max_length=254, default='')
+    description = models.TextField(default='')
+    upvotes = models.IntegerField(default='0')
+    tag = models.CharField(max_length=30, blank=True, null=True, default='')
+    target = models.DecimalField(max_digits=6, decimal_places=2, default='0.00')
+    remaining = models.DecimalField(max_digits=6, decimal_places=2, default='0.00')
+    tribute = models.DecimalField(max_digits=6, decimal_places=2, default='0.00')
+    image = models.ImageField(upload_to="img", blank=True, null=True, default='')
     
     def __str__(self):
         return self.name

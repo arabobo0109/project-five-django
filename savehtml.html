@@ -124,3 +124,258 @@
 
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="{% static 'css/clean-blog.min.css' %}">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+{% block content %}
+<title> Home </title>
+<h1> Home </h1>
+<p>Highlights of blog will go here.</p>
+
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>Clean Blog</h1>
+              <span class="subheading">A Blog Theme by Start Bootstrap</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-preview">
+            <a href="post.html">
+              <h2 class="post-title">
+                Man must explore, and this is exploration at its greatest
+              </h2>
+              <h3 class="post-subtitle">
+                Problems look mighty small from 150 miles up
+              </h3>
+            </a>
+            <p class="post-meta">Posted by
+              <a href="#">Start Bootstrap</a>
+              on September 24, 2018</p>
+          </div>
+          <hr>
+          <div class="post-preview">
+            <a href="post.html">
+              <h2 class="post-title">
+                I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.
+              </h2>
+            </a>
+            <p class="post-meta">Posted by
+              <a href="#">Start Bootstrap</a>
+              on September 18, 2018</p>
+          </div>
+          <hr>
+          <div class="post-preview">
+            <a href="post.html">
+              <h2 class="post-title">
+                Science has not yet mastered prophecy
+              </h2>
+              <h3 class="post-subtitle">
+                We predict too much for the next year and yet far too little for the next ten.
+              </h3>
+            </a>
+            <p class="post-meta">Posted by
+              <a href="#">Start Bootstrap</a>
+              on August 24, 2018</p>
+          </div>
+          <hr>
+          <div class="post-preview">
+            <a href="post.html">
+              <h2 class="post-title">
+                Failure is not an option
+              </h2>
+              <h3 class="post-subtitle">
+                Many say exploration is part of our destiny, but it’s actually our duty to future generations.
+              </h3>
+            </a>
+            <p class="post-meta">Posted by
+              <a href="#">Start Bootstrap</a>
+              on July 8, 2018</p>
+          </div>
+          <hr>
+          <!-- Pager -->
+          <div class="clearfix">
+            <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+    
+    
+    
+    {% endblock %}
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <p class="copyright text-muted">Copyright &copy; Your Website 2018</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+  </body>
+
+</html>
+
+
+
+
+
+    name = models.CharField(max_length=254, default='')
+    strap = models.TextField(default='')
+    description = models.TextField(default='')
+    upvotes = models.IntegerField(default='0')
+    target = models.DecimalField(max_digits=6, decimal_places=2, default='0.00')
+    tag = models.CharField(max_length=30, blank=True, null=True, default='')
+    remaining = models.DecimalField(max_digits=6, decimal_places=2, default='0.00')
+    tribute = models.DecimalField(max_digits=6, decimal_places=2, default='0.00')
+    image1 = models.ImageField(upload_to="img", blank=True, null=True, default='')
+    image2 = models.ImageField(upload_to="img", blank=True, null=True, default='')
+    
+    
+    
+    
+    
+        created_date = models.DateTimeField(auto_now_add=True)
+        
+        
+        
+        
+        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
+    
+    <div class="panel-body">
+        <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image1 }}')"></div>
+        
+        <h3>{{ product.name }}</h3>
+        <p class="product-description">{{ product.description }}</p>
+        <p>{{ product.tribute }}</p>
+        
+        <form method="post" action="{%url 'add_to_cart' product.id %}">
+            {% csrf_token %}
+            <div class="input-group">
+                <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
+                <span class="input-group-btn">
+                    <button class="btn btn-success" type="submit">Add</button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+ strap = models.TextField(default='')
+    description = models.TextField(default='')
+    upvotes = models.IntegerField(default='0')
+    target = models.DecimalField(max_digits=6, decimal_places=2, default='0.00')
+    tag = models.CharField(max_length=30, blank=True, null=True, default='')
+    remaining = models.DecimalField(max_digits=6, decimal_places=2, default='0.00')
+    tribute = models.DecimalField(max_digits=6, decimal_places=2, default='0.00')
+    image1 = models.ImageField(upload_to="img", blank=True, null=True, default='')
+    image2 = models.ImageField(upload_to="img", blank=True, null=True, default='')
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+             <p class="small-text">Target Tribute: £{{ product.target }}</p>
+             <p class="small-text">Amount Remaining: £{{ product.remaining }}</p>
+             <p class="small-text">Suggested Tribute: £{{ product.tribute }}</p>
+        
+        <form method="post" action="{%url 'add_to_cart' product.id %}">
+            {% csrf_token %}
+            <div class="input-group">
+                <input name="quantity" type="DecimalField" min="1" max="999" class="form-control" placeholder="Tribute Amount">
+                <span class="input-group-btn">
+                    <button class="btn btn-success" type="submit">Add</button>
+                </span>
+            </div>
+        </form>
+    

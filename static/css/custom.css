@@ -1,3 +1,78 @@
+/*Buttons*/
+
+
 .custom-btn {
     margin: 10px;
+}
+
+ .btn-custom-more {
+     background-color: #c6538c;
+     border-color: #c6538c;
+     color: white;
+     position: absolute;
+     left: 30%;
+ }
+ 
+  .btn-custom-more:hover {
+     background-color: #993366 !important;
+     border-color: #993366 !important;
+ }
+
+.button-wrap {
+ text-align: center;
+}
+
+.btn-product {
+    height: 38px;
+    width: 100px;
+    padding: 0px;
+}
+ 
+ 
+ /*Text*/
+ 
+ .small-text {
+     font-size: 13px;
+ }
+ 
+ .product-introduction {
+     text-align: center;
+ }
+ 
+ .product-body {
+      text-align: center;
+ }
+ 
+ 
+ .product-amounts {
+      text-align: center;
+ }
+ 
+ .product-upvotes {
+      text-align: center;
+ }
+
+ 
+ /*Ecommerce*/
+ 
+ 
+ .custom-product-panel {
+     border: 1px solid grey;
+     padding: 10px;
+     height: 320px;
+     margin: 10px;
+}
+ 
+.product-strap {
+     min-height: 70px;
+}
+
+.product-title {
+     min-height: 75px;
+}
+
+.custom-detail-panel {
+     border: 1px solid grey;
+     padding: 10px;
+     margin: 10px;
 }

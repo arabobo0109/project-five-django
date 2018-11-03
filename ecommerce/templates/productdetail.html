@@ -1,0 +1,76 @@
+{% extends 'base.html' %} 
+ 
+ {% block page_title %} Do Life Yourself - Member's Home Page {% endblock %}
+
+ {% block content %}
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>Premium Content</h1>
+              <span class="subheading">Have your say and shape our future content</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  </head>
+
+  <body>
+   
+   
+
+    <!-- Main Content -->
+    <div class="panel panel-default custom-detail-panel">
+        <div class="product-panel-body">
+            <div class="row">
+                {% if post.image %}
+                    <img class="img-productpost" src="/media/{{ product.image }}">
+                {% endif %}
+            </div>
+            
+                <h2>{{ product.name }}</h2>
+                <h3>{{ product.strap }}</h3>
+               <p> {{ product.description }} </p>
+                <p>Number of upvotes: {{ product.upvotes }}</p>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
+                      </div>
+                    </div>
+                <p>We will start work on the project once the target of <font color="red">£{{ product.target }}</font> is reached, and we are currently <font color="red">£{{ product.remaining }}</font> short of our target.</p>
+                    </p>
+                <p>
+                    
+                </p>
+                <p>
+                    Want to see our project completed faster? Make a tribute.
+                </p>
+            </div>
+            
+            <form method="post" action="{%url 'add_to_cart' product.id %}">
+                {% csrf_token %}
+                <div class="input-group">
+                <input name="quantity" type="DecimalField" min="1" max="999" class="form-control" placeholder="Tribute Amount">
+                <span class="input-group-btn">
+                    <button class="btn btn-success btn-product" type="submit">Add</button>
+                </span>
+                </div>
+            </form>
+
+    
+    </div>
+    </div>
+    
+    
+    
+    
+    
+
+
+  </body>
+
+ {% endblock %}
