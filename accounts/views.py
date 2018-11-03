@@ -85,3 +85,7 @@ def non_members_home(request):
     Returns a page explaining the benefits of signing up, if the user hasn't already
     """
     return render(request, 'nonmembershome.html')
+    
+def show_progress(request):
+    """Loads a page showing the projects in progress"""
+    return render(request, 'progress.html')

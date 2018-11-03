@@ -32,10 +32,10 @@
             <a href="{% url 'products' %}">
               <h2 class="post-title">
                 <i class="fas fa-shopping-basket"></i>
-                Premium Content
+                Premium Projects
               </h2>
               <h3 class="post-subtitle">
-                Shape our upcoming features, by voting for future content and supporting our endeavours.
+                Shape our content by pledging your support for the projects you really want to see next.
               </h3>
             </a>
             <p class="post-meta">
@@ -46,14 +46,14 @@
             <a href="{% url 'get_posts' %}">
               <h2 class="post-title">
                 <i class="fas fa-comments"></i>
-                Message Board
+                Member's Projects
               </h2>
               <h3 class="post-subtitle">
-                A space to share ideas with like-minded individuals.
+                A space for members to suggest projects, and upvote other suggestions.
               </h3>
             </a>
             <p class="post-meta">
-              <a href="{% url 'get_posts' %}">Enter our anonymous and supportive community.</p>
+              <a href="{% url 'get_posts' %}">Enter our anonymous community.</p>
           </div>
           <hr>
           <div class="post-preview">
@@ -63,11 +63,24 @@
                 Cart
               </h2>
               <h3 class="post-subtitle">
-                View your shopping cart, and pay for items.
+                View your shopping cart, and pay for your pledges.
               </h3>
             </a>
             <p class="post-meta">
               <a href="{% url 'view_cart' %}">Enter our secure payment zone.</p>
+          </div>
+          <div class="post-preview">
+            <a href="{% url 'show_progress' %}">
+              <h2 class="post-title">
+                <i class="fas fa-comments"></i>
+                Project Progress
+              </h2>
+              <h3 class="post-subtitle">
+                See what we're working on, and how close we are to completing new projects.
+              </h3>
+            </a>
+            <p class="post-meta">
+              <a href="{% url 'show_progress' %}">Enter our progress zone.</p>
           </div>
           <hr>
           <div class="post-preview">

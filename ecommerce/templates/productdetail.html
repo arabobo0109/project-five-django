@@ -32,24 +32,22 @@
                     <img class="img-productpost" src="/media/{{ product.image }}">
                 {% endif %}
             </div>
-            
+            <div class="product-introduction">
                 <h2>{{ product.name }}</h2>
                 <h3>{{ product.strap }}</h3>
-               <p> {{ product.description }} </p>
-                <p>Number of upvotes: {{ product.upvotes }}</p>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
-                      </div>
-                    </div>
-                <p>We will start work on the project once the target of <font color="red">£{{ product.target }}</font> is reached, and we are currently <font color="red">£{{ product.remaining }}</font> short of our target.</p>
-                    </p>
-                <p>
-                    
-                </p>
-                <p>
-                    Want to see our project completed faster? Make a tribute.
-                </p>
             </div>
+            <p> {{ product.description }} </p>
+            <p>Number of upvotes: {{ product.upvotes }}</p>
+            <p>We will start work on the project once the target of <font color="red">£{{ product.target }}</font> is reached, and we are currently <font color="red">£{{ product.remaining }}</font> short of our target.</p>
+            </p>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
+                </div>
+            </div>
+            <p>
+                Want to see our project completed faster? Make a tribute.
+            </p>
+        </div>
             
             <form method="post" action="{%url 'add_to_cart' product.id %}">
                 {% csrf_token %}
@@ -60,17 +58,12 @@
                 </span>
                 </div>
             </form>
-
     
     </div>
     </div>
     
+    <a class="btn btn-primary" href="{% url 'products' %}">Back</a>
     
-    
-    
-    
-
-
   </body>
 
  {% endblock %}

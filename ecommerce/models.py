@@ -13,6 +13,12 @@ class Product(models.Model):
     remaining = models.DecimalField(max_digits=6, decimal_places=2, default='0.00')
     tribute = models.DecimalField(max_digits=6, decimal_places=2, default='0.00')
     image = models.ImageField(upload_to="img", blank=True, null=True, default='')
-    
+    status_choices = (
+        ('PR', 'In Progress'),
+        ('PL', 'In Planning'),
+        ('C', 'Completed'),
+        ('W', 'Waiting to be Funded'),
+    )
+    status = models.CharField(max_length=2, choices=status_choices, default='W')
     def __str__(self):
         return self.name

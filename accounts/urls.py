@@ -1,5 +1,5 @@
 from django.conf.urls import url, include
-from accounts.views import index, logout, login, registration, user_profile, members_home, non_members_home
+from accounts.views import index, logout, login, registration, user_profile, members_home, non_members_home, show_progress
 from accounts import url_reset
 
 urlpatterns = [
@@ -9,5 +9,6 @@ urlpatterns = [
     url(r'^profile/$', user_profile, name="profile"),
     url(r'^members_home/$', members_home, name="members_home"),
     url(r'^non_members_home/$', non_members_home, name="non_members_home"),
+    url(r'^show_progress/$', show_progress, name="show_progress"),
     url(r'^password-reset/', include(url_reset)),
 ]

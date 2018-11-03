@@ -21,7 +21,8 @@ Commits:
 17. Installed Stripe and checkout app.
 18. Added member's home page, content app, worked on layout and search page.
 19. Implemented Bootstrap template.
-20. 
+20. Customised product pages.
+21. Created progress page.
 
 Technologies uses:
 Django - 
