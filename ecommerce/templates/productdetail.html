@@ -28,7 +28,7 @@
     <div class="panel panel-default custom-detail-panel">
         <div class="product-panel-body">
             <div class="row">
-                {% if post.image %}
+                {% if product.image %}
                     <img class="img-productpost" src="/media/{{ product.image }}">
                 {% endif %}
             </div>
@@ -37,7 +37,7 @@
                 <h3>{{ product.strap }}</h3>
             </div>
             <p> {{ product.description }} </p>
-            <p>Number of upvotes: {{ product.upvotes }}</p>
+            <p>Project status: {{ product.get_status_display }}</p>
             <p>We will start work on the project once the target of <font color="red">£{{ product.target }}</font> is reached, and we are currently <font color="red">£{{ product.remaining }}</font> short of our target.</p>
             </p>
             <div class="progress">

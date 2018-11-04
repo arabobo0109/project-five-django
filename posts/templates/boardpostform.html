@@ -1,7 +1,25 @@
 {% extends "base.html" %}
 {% load bootstrap_tags %}
 {% block content %}
-    <h1>New post</h1>
+
+     <!--Page Header -->
+    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>Project Submission</h1>
+              <span class="subheading">Submit your suggestions for future projects.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  </head>
+  
+  
+    <h1>Project Sugestion</h1>
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form | as_bootstrap }}

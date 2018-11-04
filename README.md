@@ -23,6 +23,7 @@ Commits:
 19. Implemented Bootstrap template.
 20. Customised product pages.
 21. Created progress page.
+22. 
 
 Technologies uses:
 Django - 

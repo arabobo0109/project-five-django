@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponse
 from django.utils import timezone
 from .models import Post
 from .forms import BoardPostForm
@@ -37,3 +38,10 @@ def create_or_edit_post(request, pk=None):
     else:
         form = BoardPostForm(instance=post)
     return render(request, 'boardpostform.html', {'form': form})
+    
+    
+def upvote(request, post_id):
+    post = Post.objects.get(pk=post_id)
+    post.score += 1
+    post.save()
+    return HttpResponse('get_posts')

@@ -18,6 +18,17 @@
      border-color: #993366 !important;
  }
 
+ .btn-custom-post {
+    background-color: #c6538c;
+    border-color: #c6538c;
+    color: white;
+    position: static;
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+ }
+
+
 .button-wrap {
  text-align: center;
 }
@@ -26,6 +37,10 @@
     height: 38px;
     width: 100px;
     padding: 0px;
+}
+
+.btn-post {
+    left: 40%;
 }
  
  
@@ -62,4 +77,25 @@
      border: 1px solid grey;
      padding: 10px;
      margin: 10px;
+}
+
+
+/*Posts*/
+
+.custom-post-panel {
+     border: 1px solid grey;
+     padding: 10px;
+     height: 300px;
+     margin: 10px;
+}
+
+
+.custom-post-title {
+    min-height: 100px;
+    text-align: center;
+}
+
+
+.post-content {
+    min-height: 100px;
 }
