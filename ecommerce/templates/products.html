@@ -25,6 +25,14 @@
    
 
     <!-- Main Content -->
+    <div class="container-search">
+        <div class="display">
+            <form action="{% url 'search' %}" method="get">
+                <input type="text" name="q">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
       <div class="row row-flex">
       {% for product in products %}
           <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">

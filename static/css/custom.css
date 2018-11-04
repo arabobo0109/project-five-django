@@ -44,6 +44,7 @@
 }
  
  
+ 
  /*Text*/
  
  .small-text {
@@ -53,6 +54,7 @@
  .product-introduction {
      text-align: center;
  }
+
 
  
  /*Ecommerce*/
@@ -79,6 +81,11 @@
      margin: 10px;
 }
 
+/*Search*/
+
+.container-search {
+    text-align: center;
+}
 
 /*Posts*/
 
@@ -99,3 +106,4 @@
 .post-content {
     min-height: 100px;
 }
+

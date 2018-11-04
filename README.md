@@ -23,7 +23,8 @@ Commits:
 19. Implemented Bootstrap template.
 20. Customised product pages.
 21. Created progress page.
-22. 
+22. Customised 'posts' app, to allow user to submit their own projects.
+23. Fixed bug with search app and implenented across site.
 
 Technologies uses:
 Django - 
