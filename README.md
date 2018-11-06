@@ -24,7 +24,9 @@ Commits:
 20. Customised product pages.
 21. Created progress page.
 22. Customised 'posts' app, to allow user to submit their own projects.
-23. Fixed bug with search app and implenented across site.
+23. Fixed bug with search app and implemented for ecommerce.
+24. Improved functionality to blog app.
+25. Fixed image bug, upvotes bug, login bug.
 
 Technologies uses:
 Django - 

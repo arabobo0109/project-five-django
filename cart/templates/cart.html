@@ -23,6 +23,15 @@
   </head>
 
   <body>
+     
+     
+    <div class="custom-messages">
+      {% if messages %}
+        {% for message in messages %}
+          {{ message }}
+        {% endfor %}
+      {% endif %}
+    </div>
    
 
 {% if product_count > 0 %}

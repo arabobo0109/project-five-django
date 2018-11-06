@@ -107,3 +107,11 @@
     min-height: 100px;
 }
 
+
+
+/*Base*/
+
+.custom-messages {
+    border: 1px solid grey;
+    text-align: center;
+}

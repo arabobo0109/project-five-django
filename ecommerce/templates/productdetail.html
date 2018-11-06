@@ -21,6 +21,14 @@
   </head>
 
   <body>
+      
+    <div class="custom-messages">
+      {% if messages %}
+        {% for message in messages %}
+          {{ message }}
+        {% endfor %}
+      {% endif %}
+    </div>
    
    
 
@@ -52,7 +60,7 @@
             <form method="post" action="{%url 'add_to_cart' product.id %}">
                 {% csrf_token %}
                 <div class="input-group">
-                <input name="quantity" type="DecimalField" min="1" max="999" class="form-control" placeholder="Tribute Amount">
+                <input name="quantity" type="DecimalField" min="1" max="999" class="form-control" placeholder="Number of tributes @ £20 each">
                 <span class="input-group-btn">
                     <button class="btn btn-success btn-product" type="submit">Add</button>
                 </span>

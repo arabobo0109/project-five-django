@@ -19,12 +19,25 @@
 
   <body>
 
+    <div class="custom-messages">
+      {% if messages %}
+        {% for message in messages %}
+          {{ message }}
+        {% endfor %}
+      {% endif %}
+    </div>
+
      <!--Main Content -->
       <div class="custom-create-post">
         <a href="{% url 'new_post' %}" class="btn btn-custom-post">Submit your project suggestions</a>
       </div>
       <div class="row row-flex">
       {% for post in posts %}
+            <div class="row">
+                {% if post.image %}
+                    <img class="img-productpost" src="{{MEDIA_URL}}{{product.image}}">
+                {% endif %}
+            </div>
           <div class="col-xs-12 col-xs-offset-1 col-sm-offset-0 col-sm-8 col-md-6 col-lg-4 display panel panel-default">
             <div class="panel-body custom-post-panel">
                 <div class="custom-post-title">

@@ -42,6 +42,6 @@ def create_or_edit_post(request, pk=None):
     
 def upvote(request, post_id):
     post = Post.objects.get(pk=post_id)
-    post.score += 1
+    post.votes += 1
     post.save()
-    return HttpResponse('get_posts')
+    return render(request, "postdetail.html", {'post': post})

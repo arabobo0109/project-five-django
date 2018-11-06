@@ -6,12 +6,10 @@ from .models import Content
 def get_content(request):
     """
     A view that will return a list of posts that were published
-    prior to 'now' and render these to the 'boardposts.html
-    template.
+    prior to 'now' and render these to the 'contents.html'.
     """
-    posts = Content.objects.filter(published_date__lte=timezone.now()
-                                ).order_by('-published_date')
-    return render(request, "content.html", {'posts': posts})
+    contents = Content.objects.all()
+    return render(request, "content.html", {'contents': contents})
     
     
 def content_detail(request, pk):
@@ -22,4 +20,4 @@ def content_detail(request, pk):
     content = get_object_or_404(Content, pk=pk)
     content.views += 1
     content.save()
-    return render(request, "content.html", {'content': content})
+    return render(request, "contentdetail.html", {'content': content})

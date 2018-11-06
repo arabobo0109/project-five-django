@@ -17,6 +17,14 @@
   </head>
 
   <body>
+    
+    <div class="custom-messages">
+      {% if messages %}
+        {% for message in messages %}
+          {{ message }}
+        {% endfor %}
+      {% endif %}
+    </div>
        
 
     <!-- Main Content -->
@@ -24,7 +32,7 @@
         <div class="product-panel-body">
             <div class="row">
                 {% if post.image %}
-                    <img class="img-productpost" src="/media/{{ post.image }}">
+                    <img class="img-productpost" src="{{MEDIA_URL}}{{product.image}}">
                 {% endif %}
             </div>
             <div class="product-introduction">
@@ -39,7 +47,7 @@
                 <p>Number of upvotes: {{post.votes }}</p>
                 
                 <p>
-                  <a href="upvote/{{ post.id }}">
+                  <a href="/posts/upvote/{{ post.id }}">
                   Click here to upvote this project.
                   </a>
                 </p>
