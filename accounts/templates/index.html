@@ -1,4 +1,5 @@
 {% extends 'base.html' %} 
+{% load staticfiles %}
 
  {% block page_title %} Do Life Yourself - the Lifestyle Blog {% endblock %}
 
@@ -22,13 +23,13 @@
 
   <body>
     
-    <div class="custom-messages">
       {% if messages %}
-        {% for message in messages %}
-          {{ message }}
-        {% endfor %}
+        <div class="messages-box">
+          {% for message in messages %}
+            {{ message }}
+          {% endfor %}
+        </div>
       {% endif %}
-    </div>
    
 
 

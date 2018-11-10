@@ -19,13 +19,13 @@
 
   <body>
 
-    <div class="custom-messages">
       {% if messages %}
-        {% for message in messages %}
-          {{ message }}
-        {% endfor %}
+        <div class="messages-box">
+          {% for message in messages %}
+            {{ message }}
+          {% endfor %}
+        </div>
       {% endif %}
-    </div>
 
      <!--Main Content -->
       <div class="custom-create-post">

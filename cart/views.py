@@ -1,13 +1,13 @@
 from django.shortcuts import render, redirect, reverse
+from django.contrib import messages
 
 def view_cart(request):
     """Renders the contents of the cart, to 'cart.html'"""
     return render(request, "cart.html")
     
 def add_to_cart(request, id):
-    """Ensures at least one item will be added, else raises error"""
     if int(len(request.POST.get('quantity'))) == 0:
-        print('Error raised')
+        messages.error(request, "You must add at least one item")
         
     """Adds the user specified quantity of the product to the cart"""
     quantity=int(request.POST.get('quantity'))
@@ -16,7 +16,7 @@ def add_to_cart(request, id):
     cart[id] = cart.get(id, quantity)
     
     request.session['cart'] = cart
-    return redirect(reverse('index'))
+    return redirect(reverse('view_cart'))
     
     
 def adjust_cart(request, id):

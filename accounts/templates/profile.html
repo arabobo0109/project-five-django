@@ -26,19 +26,14 @@
     <!-- Main Content -->
     
     
-        <div class="custom-messages">
       {% if messages %}
-        {% for message in messages %}
-          {{ message }}
-        {% endfor %}
+        <div class="messages-box">
+          {% for message in messages %}
+            {{ message }}
+          {% endfor %}
+        </div>
       {% endif %}
-    </div><div class="custom-messages">
-      {% if messages %}
-        {% for message in messages %}
-          {{ message }}
-        {% endfor %}
-      {% endif %}
-    </div>
+      
 <p>
     <b>User's email:</b> {{ profile.email }}
 </p>

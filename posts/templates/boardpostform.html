@@ -18,13 +18,13 @@
     </header>
   </head>
   
-    <div class="custom-messages">
       {% if messages %}
-        {% for message in messages %}
-          {{ message }}
-        {% endfor %}
+        <div class="messages-box">
+          {% for message in messages %}
+            {{ message }}
+          {% endfor %}
+        </div>
       {% endif %}
-    </div>
   
   
     <h1>Project Sugestion</h1>

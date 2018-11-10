@@ -63,7 +63,7 @@
  .custom-product-panel {
      border: 1px solid grey;
      padding: 10px;
-     height: 320px;
+     height: 510px;
      margin: 10px;
 }
  
@@ -80,6 +80,16 @@
      padding: 10px;
      margin: 10px;
 }
+
+
+.img-product {
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 /*Search*/
 
@@ -111,7 +121,19 @@
 
 /*Base*/
 
-.custom-messages {
+.messages-box {
     border: 1px solid grey;
     text-align: center;
+    margin: 10px;
+}
+
+
+/*Cart*/
+
+.custom-checkout {
+    text-align: center;
+}
+
+.input-group-addon {
+    padding: 5px;
 }

@@ -22,13 +22,13 @@
 
   <body>
       
-    <div class="custom-messages">
       {% if messages %}
-        {% for message in messages %}
-          {{ message }}
-        {% endfor %}
+        <div class="messages-box">
+          {% for message in messages %}
+            {{ message }}
+          {% endfor %}
+        </div>
       {% endif %}
-    </div>
    
    
 
@@ -36,9 +36,7 @@
     <div class="panel panel-default custom-detail-panel">
         <div class="product-panel-body">
             <div class="row">
-                {% if product.image %}
-                    <img class="img-productpost" src="/media/{{ product.image }}">
-                {% endif %}
+                <img class="img-productpost" src="/media/{{ product.image }}">
             </div>
             <div class="product-introduction">
                 <h2>{{ product.name }}</h2>
@@ -60,7 +58,7 @@
             <form method="post" action="{%url 'add_to_cart' product.id %}">
                 {% csrf_token %}
                 <div class="input-group">
-                <input name="quantity" type="DecimalField" min="1" max="999" class="form-control" placeholder="Number of tributes @ £20 each">
+                <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Number of tributes @ £20 each">
                 <span class="input-group-btn">
                     <button class="btn btn-success btn-product" type="submit">Add</button>
                 </span>

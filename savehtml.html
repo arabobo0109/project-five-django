@@ -448,3 +448,45 @@
     </div>
 
     <hr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    {% else %}
+    <p align="center">
+       There is nothing in your cart. <a href="{% url 'products' %}">Please add some products.</a>
+    </p>
+{% endif %}
+
+
+
+background-image: url('{{MEDIA_URL}}{{product.image}}')">
+
+
+
+
+
+
+
+
+
+def do_search(request):
+    products = Product.objects.filter(Q(name__icontains=request.GET['q']) | Q(strap__icontains=request.GET['q']) | Q(description__icontains=request.GET['q']))
+    posts = Post.objects.filter(Q(title__icontains=request.GET['q']) | Q(content__icontains=request.GET['q']))
+    content = Content.objects.filter(Q(title__icontains=request.GET['q']) | Q(strapline__icontains=request.GET['q']) | Q(article__icontains=request.GET['q']))
+    return render(request, "products.html", {"products":products}, {"posts":posts}, {"content":content})

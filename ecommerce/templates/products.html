@@ -23,13 +23,13 @@
 
   <body>
 
-    <div class="custom-messages">
       {% if messages %}
-        {% for message in messages %}
-          {{ message }}
-        {% endfor %}
+        <div class="messages-box">
+          {% for message in messages %}
+            {{ message }}
+          {% endfor %}
+        </div>
       {% endif %}
-    </div>
 
     <!-- Main Content -->
     <div class="container-search">
@@ -42,12 +42,14 @@
     </div>
       <div class="row row-flex">
       {% for product in products %}
-          <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
+          <div class="col-xs-12 col-xs-offset-1 col-sm-offset-0 col-sm-8 col-md-6 col-lg-4 display panel panel-default">
             <div class="panel-body custom-product-panel">
-                <img class="img-productpost" src="/media/{{ product.image }}">
-                <div class="product-title">
-                  <h2 class="product-title"> {{ product.name }} </h2>
+                <div class=".product-image">
+                  <img class="img-product" src="/media/{{ product.image }}">
                 </div>
+                  <div class="product-title">
+                    <h2 class="product-title"> {{ product.name }} </h2>
+                  </div>
                 <p class="product-strap"> {{ product.strap }} </p>
                 <div class="button-wrap">
                   <a href="{% url 'product_detail' product.id %}" class="btn btn-custom-more">Read More</a>

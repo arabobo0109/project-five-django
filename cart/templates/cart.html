@@ -25,34 +25,38 @@
   <body>
      
      
-    <div class="custom-messages">
       {% if messages %}
-        {% for message in messages %}
-          {{ message }}
-        {% endfor %}
+        <div class="messages-box">
+          {% for message in messages %}
+            {{ message }}
+          {% endfor %}
+        </div>
       {% endif %}
-    </div>
    
 
-{% if product_count > 0 %}
+{% if product_count == 0 %}
+  <p align="center">
+         There is nothing in your cart. <a href="{% url 'products' %}">Please add some products.</a>
+  </p>
+{% else %}
 <div class="row row-flex">
     {% for item in cart_items %}
-    
-    <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-display">
-        <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
+    <div class="col-xs-12 col-xs-offset-1 col-sm-offset-0 col-sm-8 col-md-6 col-lg-4 display panel panel-default">
+            <div class="panel-body custom-product-panel">
+              <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
         
-        <div class="caption">
-            <h3>{{ item.product.name }}</h3>
-            <p class="product-description">{{ item.product.description }}</p>
-            <p>{{ item.product.price }}</p>
-            <p>
-                
+            <div class="caption">
+              <img class="img-productpost" src="/media/{{ product.image }}">
+              <h3>{{ item.product.name }}</h3>
+              <p class="product-description">{{ item.product.strap }}</p>
+              <p>{{ item.product.tribute }}</p>
+              <p>
                 <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
                     {% csrf_token %}
                     <div class="form-group">
-                        <label for="exampleInputAmount" class="sr-only">New Qty</label>
+                        <label for="exampleInputAmount" class="sr-only">Enter New Qty</label>
                         <div class="input-group">
-                            <div class="input-group-addon">Qty</div>
+                            <div class="input-group-addon">New Qty</div>
                             <input name="quantity" type="number" min="0" max="999" class="form-control">
                             <div class="input-group-addon">{{ item.quantity }}</div>
                         </div>
@@ -62,17 +66,15 @@
             </p> 
         </div>
     </div>
+    </div>
+    </div>
     {% endfor %}
 </div>
-<div class="row">
+<div class="custom-checkout">
     <p>Total</p>
     <p><span class="glyphicon glyphicon-euro" aria-hidden="true"></span>{{ total }}</p>
     <a href="{% url 'checkout' %}" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
 </div>
-{% else %}
-    <p align="center">
-       There is nothing in your cart. <a href="{% url 'products' %}">Please add some products.</a>
-    </p>
 {% endif %}
   </body>
 
