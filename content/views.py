@@ -8,7 +8,7 @@ def get_content(request):
     A view that will return a list of posts that were published
     prior to 'now' and render these to the 'contents.html'.
     """
-    contents = Content.objects.all()
+    contents = Content.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     return render(request, "content.html", {'contents': contents})
     
     

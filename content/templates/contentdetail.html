@@ -30,27 +30,32 @@
     <!-- Main Content -->
     <div class="panel panel-default custom-detail-panel">
         <div class="product-panel-body">
-            <div class="row">
+          <div class="img-rows">
                 {% if content.image1 %}
-                    <img class="img-productpost" src="/media/{{ content.image1 }}">
+                    <img class="img-content" src="/media/{{ content.image1 }}">
                 {% endif %}
                 {% if content.image2 %}
-                    <img class="img-productpost" src="/media/{{ content.image2 }}">
+                    <img class="img-content" src="/media/{{ content.image2 }}">
                 {% endif %}
                 {% if content.image3 %}
-                    <img class="img-productpost" src="/media/{{ content.image3 }}">
+                    <img class="img-content" src="/media/{{ content.image3 }}">
                 {% endif %}
                 {% if content.image4 %}
-                    <img class="img-productpost" src="/media/{{ content.image4 }}">
+                    <img class="img-content" src="/media/{{ content.image4 }}">
                 {% endif %}
             </div>
             <div class="product-introduction">
-                <h2>{{ content.title }}</h2>
+              <p>
+                <h1>{{ content.title }}</h1>
+              </p>
+              <p>
+                <h2> {{ content.strapline }} </h2>
+              </p>
             </div>
-            <p> {{ content.strapline }} </p>
-            <p>{{ content.article }} </p>
-                <p>Project published on: {{ content.published_date }}</p>
-                <p>Number of views: {{ content.views }}</p>
+              
+            <p>{{ content.article | linebreaks }} </p>
+                <strong><p>Project published on:</strong> {{ content.published_date }}</p>
+                <strong><p>Number of views: </strong>{{ content.views }}</p>
     
     </div>
     </div>

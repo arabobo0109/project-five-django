@@ -35,15 +35,15 @@
     <!-- Main Content -->
     <div class="panel panel-default custom-detail-panel">
         <div class="product-panel-body">
-            <div class="row">
-                <img class="img-productpost" src="/media/{{ product.image }}">
+            <div class="text-center">
+                <img class="img-product" src="/media/{{ product.image }}">
             </div>
             <div class="product-introduction">
-                <h2>{{ product.name }}</h2>
-                <h3>{{ product.strap }}</h3>
+                <p><h1>{{ product.name }}</h1></p>
+                <p><h2>{{ product.strap }}</h2></p>
             </div>
-            <p> {{ product.description }} </p>
-            <p>Project status: {{ product.get_status_display }}</p>
+            <p> {{ product.description | linebreaks }} </p>
+            <strong><p>Project status:</strong> {{ product.get_status_display }}</p>
             <p>We will start work on the project once the target of <font color="red">£{{ product.target }}</font> is reached, and we are currently <font color="red">£{{ product.remaining }}</font> short of our target.</p>
             </p>
             <div class="progress">

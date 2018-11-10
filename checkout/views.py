@@ -46,6 +46,14 @@ def checkout(request):
             if customer.paid:
                 messages.error(request, "You have successfully paid")
                 request.session['cart'] = {}
+                
+                before_remaining = product.remaining
+                remaining = before_remaining - total
+                product_remaining = Product(
+                     remaining = remaining 
+                     )
+                product_remaining.save()
+                
                 return redirect (reverse('products'))
             else:
                 messages.error(request, "Unable to take payment")

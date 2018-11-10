@@ -28,6 +28,8 @@ Commits:
 24. Improved functionality to blog app.
 25. Fixed image bug, upvotes bug, login bug, implemented messages.
 26. Fixed messages bug. Customised 'cart.html'.
+27. Implemented 'remaining' functionality to 'cart' app. Added 'about' page, and more content to apps and customised layouts. 
+28. **current not submitted **
 
 Technologies uses:
 Django - 

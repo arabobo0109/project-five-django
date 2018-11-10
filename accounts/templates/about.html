@@ -1,0 +1,61 @@
+{% extends 'base.html' %} 
+{% load staticfiles %}
+
+ {% block page_title %} Do Life Yourself - the Lifestyle Blog {% endblock %}
+
+ {% block content %}
+ 
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>About</h1>
+              <span class="subheading">A brief introduction to the girl behind the blog</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  </head>
+
+  <body>
+    
+      {% if messages %}
+        <div class="messages-box">
+          {% for message in messages %}
+            {{ message }}
+          {% endfor %}
+        </div>
+      {% endif %}
+   
+
+
+    <!-- Main Content -->
+    
+    <div class="container">
+        <img class="img-about" src="/media/img/host/sarah.jpg">
+        <div class="about-text">
+            <p class="text-center">My name is Sarah, and I am the creator of <b>Do <i>Life</i> Yourself.</b>
+            </p>
+            <p>The blog was borne of my DIY attitute towards life. I am a stubborn only child, so I have grown up doing things my own way. I also want to get the most out of my income, so I cut out the middle man wherever I can. I also really enjoy completing projects myself - it's a real sense of achievement!
+            </p>
+            <p>Through my blog, I document projects I have completed, so others can learn from my attempts and do it themselves. I also have a member's area, where registered users can submit, vote and pay for projects they'd like to see complete.
+            </p>
+            <p>
+                A little more about me, you ask? Well I have just hit my 30s. I am currently self-employed, and split my time between data analysis and running my online business. I reside in the North West of the UK with my partner and my long-hair Chihuahua. We are expecting an addition to the family in the new year, as I am currently pregnant with our first child - I definitely draw the line at attempting the birth myself!
+            </p>
+            <p>
+                So what are you waiting for? Jump right in, and view my 
+                <a href="{% url 'get_content' %}">blog!</a>
+            </p>
+        </div>
+    </div>
+
+  </body>
+
+
+ {% endblock %}
+

@@ -49,7 +49,6 @@ def registration(request):
         
         if registration_form.is_valid():
             registration_form.save()
-            
             user = auth.authenticate(username=request.POST['username'], 
                                         password=request.POST['password1'])
             if user:
@@ -63,7 +62,7 @@ def registration(request):
             
     
     return render(request, 'registration.html', 
-        {"registration_form": registration_form})
+        {"registration_form": registration_form} )
 
 
 def user_profile(request):
@@ -84,7 +83,9 @@ def non_members_home(request):
     Returns a page explaining the benefits of signing up, if the user hasn't already
     """
     return render(request, 'nonmembershome.html')
-    
-def show_progress(request):
-    """Loads a page showing the projects in progress"""
-    return render(request, 'progress.html')
+
+def about_page(request):
+    """
+    Renders an 'about' page.
+    """
+    return render(request, 'about.html')

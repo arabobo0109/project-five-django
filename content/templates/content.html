@@ -35,18 +35,24 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           {% for content in contents %}
-          <div class="post-preview">
+          <div class="post-preview custom-content-preview">
             <a href="{% url 'content_detail' content.id %}">
-              <h2 class="post-title">
+              <h1 class="text-center">
                 {{ content.title }}
-              </h2>
-              <h3 class="post-subtitle">
-                {{ content.strapline }}
-              </h3>
+              </h1>
+              <div class="row row-flex">
+                <div class="col-xs-12 col-s-4 col-md-4 col-lg-4 text-center">
+                  <img class="img-content-small" src="/media/{{ content.image1 }}">
+                </div>
+                <div class="col-xs-12 col-s-8 col-md-8 col-lg-8 text-center">
+                  <p class="content-subtitle">
+                    {{ content.strapline }}
+                  </p>
+                 <i><p>Posted by Sarah on
+                    {{ content.published_date }}</p></i>
+                </div>
+              </div>
             </a>
-            <p class="post-meta">Posted by
-              <a href="#">Sarah</a> on
-              {{ content.published_date }}</p>
           </div>
           <hr>
           {% endfor %}

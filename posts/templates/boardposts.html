@@ -8,8 +8,8 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
-              <h1>Member's Projects</h1>
-              <span class="subheading">Submit your suggestions, and vote for other's.</span>
+              <h1>Member's Project Submissions</h1>
+              <span class="subheading">Submit your suggestions. The ones with the most upvotes will be attempted.</span>
             </div>
           </div>
         </div>
@@ -31,30 +31,28 @@
       <div class="custom-create-post">
         <a href="{% url 'new_post' %}" class="btn btn-custom-post">Submit your project suggestions</a>
       </div>
-      <div class="row row-flex">
-      {% for post in posts %}
-            <div class="row">
-                {% if post.image %}
-                    <img class="img-productpost" src="{{MEDIA_URL}}{{product.image}}">
-                {% endif %}
-            </div>
-          <div class="col-xs-12 col-xs-offset-1 col-sm-offset-0 col-sm-8 col-md-6 col-lg-4 display panel panel-default">
-            <div class="panel-body custom-post-panel">
-                <div class="custom-post-title">
-                  <h2> {{ post.title }} </h2>
-                </div>
-                <div class="post-content">
-                  <span>{{ post.content|truncatewords:15 }} </span>
-                </div>
-                <div class="button-wrap">
-                  <a href="{% url 'post_detail' post.id %}" class="btn btn-custom-more btn-post">Read More</a>
-                </div>
-            </div>
-          </div>
-      {% endfor %}
-      </div>
-  </body>
-
-   
+      
+    {% for post in posts %}
+      <div class="container">
+        <div class="row custom-post-preview">
+          <div class="col-12">
+            <p><h1 class="text-center">
+                {{ post.title }}
+            </p></h1>
+            <p class="text-center">
+              <span>{{ post.content | truncatewords:15 }} </span>
+            </p>
+            <p>
+              Posted by: {{ post.user }}
+            </p>
+            <p  class="text-right">
+              <a href="{% url 'post_detail' post.id %}"><i>Read More</i></a>
+            </p>
+        </div>
+        </div>
+        </div>
+    {% endfor %}
+    
+</body>
    
 {% endblock %}

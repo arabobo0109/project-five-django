@@ -40,8 +40,6 @@ def create_or_edit_post(request, pk=None):
     
     
 def upvote(request, post_id):
-    # if user has already upvoted, messages.error(request, "You have already upvoted"), else allow user to upvote if they haven't already.
-    # unsure how to check whether user has voted - need to add username to every upvote? 
     post = Post.objects.get(pk=post_id)
     post.votes += 1
     post.save()

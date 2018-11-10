@@ -40,24 +40,32 @@
             </form>
         </div>
     </div>
-      <div class="row row-flex">
-      {% for product in products %}
-          <div class="col-xs-12 col-xs-offset-1 col-sm-offset-0 col-sm-8 col-md-6 col-lg-4 display panel panel-default">
-            <div class="panel-body custom-product-panel">
-                <div class=".product-image">
-                  <img class="img-product" src="/media/{{ product.image }}">
+    
+     <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto product-">
+          {% for product in products %}
+          <div class="post-preview custom-product-preview">
+              <h1 class="text-center">
+                {{ product.name }}
+              </h1>
+              <div class="row row-flex">
+                <div class="col-xs-12 col-s-4 col-md-4 col-lg-4 text-center">
+                  <img class="img-content-small" src="/media/{{ product.image }}">
                 </div>
-                  <div class="product-title">
-                    <h2 class="product-title"> {{ product.name }} </h2>
-                  </div>
-                <p class="product-strap"> {{ product.strap }} </p>
-                <div class="button-wrap">
-                  <a href="{% url 'product_detail' product.id %}" class="btn btn-custom-more">Read More</a>
+                <div class="col-xs-12 col-s-8 col-md-8 col-lg-8 text-center">
+                  <p class="content-subtitle">
+                    {{ product.strap }}
+                  </p>
+                  <p>
+                    <a href="{% url 'product_detail' product.id %}"><i>Read More</i></a>
+                  </p>
                 </div>
-            </div>
+              </div>
           </div>
-      {% endfor %}
+          {% endfor %}
       </div>
-  </body>
+    </div>
+  </div>
 
  {% endblock %}
