@@ -6,7 +6,7 @@
  {% block content %}
 
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <header class="masthead" style="background-image: url('/media/img/host/background.jpg')">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
@@ -34,7 +34,7 @@
     <!-- Main Content -->
     <div class="container-search">
         <div class="display">
-            <form action="{% url 'search' %}" method="get">
+            <form action="{% url 'search_products' %}" method="get">
                 <input type="text" name="q">
                 <button type="submit">Search</button>
             </form>

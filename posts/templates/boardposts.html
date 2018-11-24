@@ -2,7 +2,9 @@
 {% block content %}
 
      <!--Page Header -->
-    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <header class="masthead" style="background-image: url('/media/img/host/background.jpg')">
+      
+      
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
@@ -32,27 +34,29 @@
         <a href="{% url 'new_post' %}" class="btn btn-custom-post">Submit your project suggestions</a>
       </div>
       
+
+ 
+<div class="container">
+  <div class="row">
     {% for post in posts %}
-      <div class="container">
-        <div class="row custom-post-preview">
-          <div class="col-12">
-            <p><h1 class="text-center">
+    <div class="col-md-6 custom-post-preview">
+       <p><h1 class="text-center">
                 {{ post.title }}
             </p></h1>
             <p class="text-center">
               <span>{{ post.content | truncatewords:15 }} </span>
             </p>
             <p>
-              Posted by: {{ post.user }}
+              <strong>Posted by:</strong> {{ post.user }}
             </p>
             <p  class="text-right">
               <a href="{% url 'post_detail' post.id %}"><i>Read More</i></a>
             </p>
-        </div>
-        </div>
-        </div>
-    {% endfor %}
-    
+    </div>
+  {% endfor %}
+  </div>
+</div> 
+ 
 </body>
    
 {% endblock %}

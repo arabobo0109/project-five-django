@@ -7,7 +7,7 @@
  {% block content %}
 
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <header class="masthead" style="background-image: url('/media/img/host/background.jpg')">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
@@ -43,10 +43,8 @@
     {% for item in cart_items %}
     <div class="col-xs-12 col-xs-offset-1 col-sm-offset-0 col-sm-8 col-md-6 col-lg-4 display panel panel-default">
             <div class="panel-body custom-product-panel">
-              <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
-        
             <div class="caption">
-              <img class="img-productpost" src="/media/{{ product.image }}">
+              <img class="img-productpost" src="/media/{{ item.product.image }}">
               <h3>{{ item.product.name }}</h3>
               <p class="product-description">{{ item.product.strap }}</p>
               <p>{{ item.product.tribute }}</p>

@@ -1,6 +1,5 @@
 /*Buttons*/
 
-
 .custom-btn {
     margin: 10px;
 }
@@ -44,7 +43,6 @@
 }
  
  
- 
  /*Text*/
  
  .small-text {
@@ -59,7 +57,56 @@
      text-align: right;
  }
  
+ 
+ .custom-text-index {
+     font-size: 100px;
+ }
+ 
+ 
+ /*Links*/
+ 
+ p a {
+    text-decoration: none;
+    color: #545E75;
+ }
+ 
+ a:hover {
+     text-decoration: none;
+     color: #AFCCD2;
+ }
+     
+ 
+/*Base*/
 
+.messages-box {
+    text-align: center;
+    margin: 10px;
+}
+
+
+/*Index*/
+
+ .custom-index-nav {
+    font-size: 50px;
+    margin-left: 0;
+    margin-right: 0;
+    background-color: #AFCCD2;
+ }
+ 
+  .custom-index-nav:hover {
+     background-color: #545E75;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+ }
+ 
+ .custom-paragraph {
+    margin: 0px;
+ }
+ 
+ 
  /*Ecommerce*/
  
 .custom-product-preview {
@@ -87,22 +134,11 @@
     margin: 20px;
 }
 
+
 /*Posts*/
 
 .custom-post-preview {
     border: 1px solid grey;
-    margin: 10px;
-    padding: 5px;
-}
-
-
-
-/*Base*/
-
-.messages-box {
-    border: 1px solid grey;
-    text-align: center;
-    margin: 10px;
 }
 
 
@@ -115,6 +151,7 @@
 .input-group-addon {
     padding: 5px;
 }
+
 
 /*About*/
 
@@ -162,12 +199,4 @@
  
  .custom-content-preview {
      border: 1px solid grey;
- }
- 
- 
- /*Index*/
- 
- .img-index {
-    height: 200px;
-    width: 200px;
  }

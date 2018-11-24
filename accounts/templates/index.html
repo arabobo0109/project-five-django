@@ -1,12 +1,12 @@
 {% extends 'base.html' %} 
-{% load staticfiles %}
+{% load static from staticfiles %}
 
  {% block page_title %} Do Life Yourself - the Lifestyle Blog {% endblock %}
 
  {% block content %}
  
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <header class="masthead" style="background-image: url('/media/img/host/background.jpg')">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
@@ -23,31 +23,81 @@
 
   <body>
     
-      {% if messages %}
-        <div class="messages-box">
-          {% for message in messages %}
-            {{ message }}
-          {% endfor %}
+    <!--Displays any messages, if there are any-->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          {% if messages %}
+            <div class="messages-box">
+              {% for message in messages %}
+                {{ message }}
+              {% endfor %}
+            </div>
+          {% endif %}
         </div>
-      {% endif %}
+      </div>
+    </div>
    
 
 
     <!-- Main Content -->
-   
-   <div class="container">
-      <div class="row">
-        <div class="col-lg-6 mx-auto">
-          <div class="container">
-            <img class="img-index" src="/media/img/host/blog.jpg">
+    <div class="container-fluid">
+      <div class="row text-center">
+        <div class="col-12">
+          <div class="custom-index-nav">
+            <p class="custom-paragraph">
+              <a href="{% url 'about_page' %}">ABOUT</a>
+            </p>
           </div>
         </div>
-      </div>  
-   </div>
-   
+        <div class="col-12">
+          <div class="custom-index-nav">
+            <p class="custom-paragraph">
+              <a href="{% url 'get_content' %}">BLOG</a>
+            </p>
+          </div>
+        </div>
+        {% if user.is_authenticated %}
+        <div class="col-12">
+          <div class="custom-index-nav">
+            <p class="custom-paragraph">
+              <a href="{% url 'members_home' %}">MEMBER'S HOME</a>
+            </p>
+          </div>
+        </div>
+        <div class="col-12 custom-index-nav">
+          <p class="custom-paragraph">
+            <a href="{% url 'logout' %}">LOG OUT</a>
+          </p>
+        </div>
+        {% else %}
+        <div class="col-12">
+          <div class="custom-index-nav">
+            <p class="custom-paragraph">
+              <a href="{% url 'non_members_home' %}">MEMBER'S HOME</a>
+            </p>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="custom-index-nav">
+            <p class="custom-paragraph">
+              <a href="{% url 'register' %}">REGISTER</a>
+            </p>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="custom-index-nav">
+            <p class="custom-paragraph">
+              <a href="{% url 'login' %}">LOG IN</a>
+            </p>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    <br>
    
   </body>
 
 
  {% endblock %}
-

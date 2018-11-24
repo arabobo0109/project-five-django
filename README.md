@@ -29,7 +29,7 @@ Commits:
 25. Fixed image bug, upvotes bug, login bug, implemented messages.
 26. Fixed messages bug. Customised 'cart.html'.
 27. Implemented 'remaining' functionality to 'cart' app. Added 'about' page, and more content to apps and customised layouts. 
-28. **current not submitted **
+28. Added background image to page header. Edited 'index.html' to include navigational links.
 
 Technologies uses:
 Django - 
@@ -42,5 +42,22 @@ Gunicorn - WSGI HTTP server for python
 Stripe - allows us to take bank card payments
 
 Testing:
+
+When customising any of my CSS, I would load the page in developer tools and write the code this way.
+
+
+
+
+
+To ensure my colour scheme did not clash, I loaded my header image into MS Paint, and picked a colour that I liked, and used the colour picker to find the RGB code. I then translated this into the HEX code, and used it where I wanted in my project. I then input the HEX code into https://coolors.co/ to find my colour scheme.
+
+
 Travis - 
 [![Build Status](https://travis-ci.org/sarahcrosby/project-five-django.svg?branch=master)](https://travis-ci.org/sarahcrosby/project-five-django)
+
+
+
+Credits 
+
+background image
+https://coolors.co/ colour scheme
