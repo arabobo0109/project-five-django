@@ -2,29 +2,54 @@
 
 .custom-btn {
     margin: 10px;
+    background-color: #545e75;
+    color: #afccd2;
 }
 
+.custom-btn:hover {
+    background-color: #afccd2;
+    color: #545e75;
+}
+
+
  .btn-custom-more {
-     background-color: #c6538c;
-     border-color: #c6538c;
-     color: white;
-     position: absolute;
-     left: 30%;
+    background-color: #afccd2;
+    border-color: #afccd2;
+    color: #545e75;
+    position: absolute;
+    left: 30%;
  }
  
   .btn-custom-more:hover {
-     background-color: #993366 !important;
-     border-color: #993366 !important;
+    background-color: #545e75 !important;
+    border-color: #545e75 !important;
+    color: #afccd2;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
  }
 
  .btn-custom-post {
-    background-color: #c6538c;
-    border-color: #c6538c;
-    color: white;
+    background-color: #afccd2;
+    border-color: #afccd2;
+    color: #545e75;
     position: static;
     width: 100%;
     padding: 10px;
     margin: 10px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+ }
+ 
+ .btn-custom-post:hover {
+    background-color: #545e75;
+    border-color: #545e75;
+    color: #afccd2;
  }
 
 
@@ -36,6 +61,13 @@
     height: 38px;
     width: 100px;
     padding: 0px;
+    background-color: #afccd2;
+    color: #545e75;
+}
+
+.btn-product:hover {
+    background-color: #545e75;
+    color: #afccd2;
 }
 
 .btn-post {
@@ -81,6 +113,18 @@
 .messages-box {
     text-align: center;
     margin: 10px;
+}
+
+.icon_white {
+    color: white;
+}
+
+.badge-warning {
+    background-color: #AFCCD2;
+}
+
+.custom-icon {
+    color: #545e75;
 }
 
 
@@ -163,8 +207,8 @@
     max-height: 300px;
     max-width: 300px;
     border-radius: 50%;
+    opacity: 0.7;
 }
-
 
 .about-title {
     text-align: center;

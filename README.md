@@ -1,6 +1,12 @@
 Fifth and final project for the Code Institute: Full Stack Frameworks with Django.
 
 
+
+Real world need - informative blog. When live, would generate an income. 
+
+Bootstrap theme, customised.
+
+
 Commits:
 1. Initial commit. 
 2. Created superuser. Added accounts templates and log in functionality.
@@ -30,6 +36,8 @@ Commits:
 26. Fixed messages bug. Customised 'cart.html'.
 27. Implemented 'remaining' functionality to 'cart' app. Added 'about' page, and more content to apps and customised layouts. 
 28. Added background image to page header. Edited 'index.html' to include navigational links.
+29. Added comments to code. Finishing touches to CSS, including password reset forms. 
+30. 
 
 Technologies uses:
 Django - 

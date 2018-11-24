@@ -18,19 +18,35 @@
     </header>
   </head>
   
-      {% if messages %}
-        <div class="messages-box">
-          {% for message in messages %}
-            {{ message }}
-          {% endfor %}
+  <body>
+  
+    <!--Displays any messages, if there are any-->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          {% if messages %}
+            <div class="messages-box">
+              {% for message in messages %}
+                {{ message }}
+              {% endfor %}
+            </div>
+          {% endif %}
         </div>
-      {% endif %}
-  
-  
-    <h1>Project Sugestion</h1>
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form | as_bootstrap }}
-        <button type="submit" class="btn btn-info">Save</button>
-    </form>
+      </div>
+      
+      <!--Generates form to allow users to submit posts-->
+      <div class="row">
+        <div class="col-12">
+          <span class="text-center">
+            <h1>Project Sugestion</h1>
+          </span>
+          <form method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+              {{ form | as_bootstrap }}
+              <button type="submit" class="btn btn-info custom-btn">Save</button>
+          </form>
+        </div>
+      </div>
+    
+  </body>
 {% endblock %}

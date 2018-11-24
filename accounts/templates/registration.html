@@ -1,4 +1,5 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
+{% load bootstrap_tags %}
 
  {% block page_title %} Do Life Yourself - Member Registration {% endblock %}
 
@@ -22,20 +23,31 @@
 
   <body>
     
-      {% if messages %}
-        <div class="messages-box">
-          {% for message in messages %}
-            {{ message }}
-          {% endfor %}
+    <!--Displays any messages, if there are any-->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          {% if messages %}
+            <div class="messages-box">
+              {% for message in messages %}
+                {{ message }}
+              {% endfor %}
+            </div>
+          {% endif %}
         </div>
-      {% endif %}
-   
-    <!-- Main Content -->
-    <form method="POST">
-        {% csrf_token %}
-        {{ registration_form.as_p }}
-        <button type="submit">Register</button>
-    </form>
+      </div>
+      
+       <!-- Main Content -->
+      <div class="row">
+        <div class="col-12">
+          <form method="POST">
+              {% csrf_token %}
+              {{ registration_form | as_bootstrap }}
+              <button type="submit" class="btn custom-btn">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
     
   </body>
 

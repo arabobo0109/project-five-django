@@ -20,24 +20,42 @@
       </div>
     </header>
   </head>
-
+  
+  
+  
   <body>
     
-      {% if messages %}
-        <div class="messages-box">
-          {% for message in messages %}
-            {{ message }}
-          {% endfor %}
+    <!--Displays any messages, if there are any-->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          {% if messages %}
+            <div class="messages-box">
+              {% for message in messages %}
+                {{ message }}
+              {% endfor %}
+            </div>
+          {% endif %}
         </div>
-      {% endif %}
-   
-    <!-- Main Content -->
-    <form method="POST">
-    {% csrf_token %}
-        {{ login_form | as_bootstrap }}
-    <button type="submit" class="btn btn-default">Login</button>
-</form>
-
-<p><a href="{% url 'password_reset' %}">Reset Password</a></p>
+      </div>
+      
+      <!-- Main Content -->
+      <div class="row">
+        <div class="col-12">
+          <form method="POST">
+              {% csrf_token %}
+              {{ login_form | as_bootstrap }}
+              <button type="submit" class="btn custom-btn">Login</button>
+          </form>
+        </div>
+        <div class="col-12">
+          <p>
+            <a href="{% url 'password_reset' %}" class="btn custom-btn">Reset Password</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    
+  </body>
 
  {% endblock %}
