@@ -37,7 +37,7 @@ Commits:
 27. Implemented 'remaining' functionality to 'cart' app. Added 'about' page, and more content to apps and customised layouts. 
 28. Added background image to page header. Edited 'index.html' to include navigational links.
 29. Added comments to code. Finishing touches to CSS, including password reset forms. 
-30. 
+30. Started testing.
 
 Technologies uses:
 Django - 

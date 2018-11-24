@@ -65,12 +65,6 @@ def registration(request):
         {"registration_form": registration_form} )
 
 
-def user_profile(request):
-    """Returns the user's profile page"""
-    user = User.objects.get(email=request.user.email)
-    return render(request, 'profile.html', {"profile": user})
-
-
 @login_required
 def members_home(request):
     """Returns the signed in member's home page"""
@@ -79,13 +73,9 @@ def members_home(request):
     
     
 def non_members_home(request):
-    """
-    Returns a page explaining the benefits of signing up, if the user hasn't already
-    """
+    # Returns a page explaining the benefits of signing up, if the user hasn't already
     return render(request, 'nonmembershome.html')
 
 def about_page(request):
-    """
-    Renders an 'about' page.
-    """
+    # Renders an about page
     return render(request, 'about.html')

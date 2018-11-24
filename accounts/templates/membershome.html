@@ -22,15 +22,20 @@
 
   <body>
     
-      {% if messages %}
-        <div class="messages-box">
-          {% for message in messages %}
-            {{ message }}
-          {% endfor %}
+    <!--Displays messages, if there are any-->
+    <div class="containter-fluid">
+      <div class="row">
+        <div class="col-12">
+          {% if messages %}
+            <div class="messages-box">
+              {% for message in messages %}
+                {{ message }}
+              {% endfor %}
+            </div>
+          {% endif %}
         </div>
-      {% endif %}
-   
-
+      </div>
+    </div>
 
     <!-- Main Content -->
     <div class="container">
@@ -77,20 +82,9 @@
             <p class="post-meta">
               <a href="{% url 'view_cart' %}">Enter our secure payment zone.</p>
           </div>
-          <hr>
-          <div class="post-preview">
-            <a href="{% url 'profile' %}">
-              <h2 class="post-title">
-                <i class="fas fa-user"></i>
-                Profile
-              </h2>
-              <h3 class="post-subtitle">
-                View your membership profile.
-              </h3>
-            </a>
-            <p class="post-meta">
-              <a href="{% url 'profile' %}">Enter your personal profile page</p>
-          </div>
+        </div>
+      </div>
+    </div>
   </body>
 
 
