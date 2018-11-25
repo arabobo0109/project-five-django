@@ -38,6 +38,7 @@ Commits:
 28. Added background image to page header. Edited 'index.html' to include navigational links.
 29. Added comments to code. Finishing touches to CSS, including password reset forms. 
 30. Started testing.
+31. Completed testing.
 
 Technologies uses:
 Django - 
