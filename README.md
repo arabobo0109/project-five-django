@@ -1,13 +1,108 @@
-Fifth and final project for the Code Institute: Full Stack Frameworks with Django.
+# Do Life Yourself - A Lifestyle Blog For People Who Do Things Their Own Way
 
+## Project Five: Full Stack Frameworks with Django [![Build Status](https://travis-ci.org/sarahcrosby/project-five-django.svg?branch=master)](https://travis-ci.org/sarahcrosby/project-five-django)
 
+This is my fifth project, a web application that willdraw on the skills and knowledge I have acquired across the whole course. 
 
-Real world need - informative blog. When live, would generate an income. 
+The blog capitalizes on the 'do it yourself' attitude, which is increasing in popularity. When live, it will feature tutorials from the author, which document projects from inception to completion. These range from typical home DIY projects, to more ambitious ideas such as launching a business and a DIY wedding.
 
-Bootstrap theme, customised.
+The real-world need is for an informative blog, that will generate an income for the owner.
 
+The project will consist of multiple apps, which include user registration and authentication mechanisms, which will provide access to a member's only area. Within this area, members can fund premium projects, which would be undertaken when funding is complete. Members can also submit their own projects, which they would like to see attempted. 
 
-Commits:
+### Demo
+
+A live demo can be found here: https://project-five-django.herokuapp.com/
+
+### Technologies and Languages
+
+* [Bootstrap (4.1.3)](https://getbootstrap.com/) - for the template, and to build a responsive and visually appealing site.
+* [Javascript (1.8.5)](https://en.wikipedia.org/wiki/JavaScript) - the language and logic of the interactive elements on the page - jQuery
+* [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) - the language used to customise and present the web app, including CSS3 media queries.
+* [HTML5](https://en.wikipedia.org/wiki/HTML) - the language used to write and create the web app.
+* [Python (3.0)](https://www.python.org/) - for backend code and site functionality.
+* [Django (1.11.15)](https://www.djangoproject.com/) - for templates, forms, data and authentication mechanisms.
+* [UnitTest](https://docs.python.org/3/library/unittest.html) - the Python framework for testing code
+* [Postgres](https://www.postgresql.org/) - the database used to store data.
+* [Stripe (2.10.1)](https://stripe.com/) - for processing payments.
+* [Google Fonts](https://fonts.google.com/) - for fonts used throughout the project.
+* [Font Awesome](https://fontawesome.com/) - for icons used in the project.
+* [Dj Database Url(0.5.0)](https://github.com/kennethreitz/dj-database-url) - allows access to postgreSQL instead of standard database driver used in Django.
+* [Django Forms Bootstrap (3.1.0)](https://github.com/pinax/django-forms-bootstrap) - to easily generate bootstrap forms.
+* [Gunicorn (19.9.0)](https://gunicorn.org/) - Python server.
+* [Pillow (5.3.0)](https://pillow.readthedocs.io/en/5.3.x/) - for images in Python.
+* [Psycopg2 (2.7.5)](http://initd.org/psycopg/) - PostgreSQL adaptor for Python.
+* [Travis CI](https://travis-ci.org/) - for continuous testing of my code.
+* [Whitenoise (4.1)](http://whitenoise.evans.io/en/stable/) - to host static files on Heroku.
+* [Heroku](https://dashboard.heroku.com/) - to host the project.
+* [GitHub](https://github.com/) - for version control, and to host the project.
+* [Amazon Web Services](https://aws.amazon.com/) - for hosting purposes.
+
+### UX
+
+I used a Bootstrap template to ensure my web application was visually appealing. To keep a clear division between my code and the Bootstrap code, I have created a 'library' folder which contains the original code. The template was called 'Clean Blog' and can be found [here](https://startbootstrap.com/template-overviews/clean-blog/).
+
+I customised the code to suit my needs, and also added a 'custom.css' file. When editing CSS, I used the developer tools to edit my code before saving it. I also used the emulator in the developer tools to confirm that my app worked on different screen sizes, and I also loaded my app on my mobile, iPad and laptop.
+
+To ensure my colour scheme did not clash, I loaded my header image into MS Paint, and picked a colour that I liked, and used the colour picker to find the RGB code. I then translated this into the HEX code, and used it where I wanted in my project. I then input the HEX code into https://coolors.co/ to find my colour scheme.
+
+When designing the different aspects of my page, I decided that each feature should have an introduction, so the user could choose what they would like to see in more detail. For example, I listed a summary of the blog posts, and the user could click on a specific one to load the entire blog post. This was to save time loading the page and to stop the user feeling overloaded with information.
+
+I also wanted to incorporate the following user stories: 
+
+* As a user, I wanted to feel part of a community, by having a registration function and separate member's only page and content.
+* As a registered user, I wanted to make contributions to the blog, by being able to make contributions, either financially or by voting and submitting ideas.
+* As the site's author, I wanted to make an income from the website, by having a working eCommerce app.
+* As a user, I wanted to understand what the website was about, by having an 'about' page.
+* As a user, I wanted to be able to view the website on different devices, by having a responsive design.
+* As a user, I didn't want to be confused or overloaded by information, by having a simple page with no pop-ups.
+
+### Features
+
+* Database functionality - to store and persist data, such as the blog posts.
+* User registration and authentication - to allow members to interact with the site, and to persist the user's shopping cart between visits.
+* About page - introduces and explains the meaning of the web appplication.
+* Log in - allows the user to log into the member's only part of the website.
+* Log out - allows users to log out of the site, to enhance security, ie. if they are using a shared computer.
+* Shopping cart - allows users to see what they have added to their shopping cart, adjust the amounts, remove items they don't want, and proceed to to the check out.
+* Checkout - uses Stripe to allow users to pay for items in their cart. 
+* Blog - retrieves the author's blog posts from the database. This is the main content of the web application, as the users vot and pay for the blog posts they'd like to read next.
+* eCommerce - allows users to browse which projects they would like to fund.
+* Posts - allows registered and signed-in users to post their ideas for what they'd like to see next on the blog, and also read and vote for other people's ideas.
+* Search - allows users to search through the eCommerce app, and find products they may be searching for.
+
+In the future, I would extend the Django User model, to improve the 'upvote' functonality. This would ensure the user could only vote for a blog post once.
+
+### Deployment
+
+My code is deployed to GitHub, at: https://github.com/sarahcrosby/project-five-django/
+
+I have also deployed my code to Heroku, at: https://project-five-django.herokuapp.com/
+
+To run the app locally, first of all set up a virtual environment, and then download the files from GitHub and upload. 
+
+Alternatively, you could clone the repository, by typing the following command into the terminal:
+
+> $ git clone https://github.com/sarahcrosby/project-five-django/
+
+Then, ensure you follow the requirements.txt and install everything indicated in this.
+
+Due to sensitive information such as the secret keys being hidden in my code, you will need to address this with your own before the web app will function properly. You will also need to connect to your own database. This includes the Stripe and AWS keys.
+
+### Testing
+
+I used Travis CI for continuous testing throughout development - [![Build Status](https://travis-ci.org/sarahcrosby/project-five-django.svg?branch=master)](https://travis-ci.org/sarahcrosby/project-five-django)
+
+I have also included automated Unit Tests across my project - please see the separate test files within each app.
+
+I manually tested my project throughout construction. This included running through every link and trying to 'break' my code. I also asked my friends to do the same, to ensure I hadn't missed anything.
+
+**bug - Stripe
+
+I encountered a bug when I was updating the models for my database. After writing the original models, I decided that I wanted to change them, but this caused errors when migrating because I had already uploaded content to the database, so the existing models did not match the new models. To resolve this, I had to delete every migration from the separate apps, and start again. In the process, I deleted all of the content from my database, which included the blog posts which I had written. I did not have time to re-write the posts before the submission date, which is why I included the 'Lorem Ipsum' text, as a placeholder for the full blog, which would appear when the blog went live. I learned the hard way that I should back-up my code and website data! - but it is a mistake I will not make again. 
+
+### Version Control
+
 1. Initial commit. 
 2. Created superuser. Added accounts templates and log in functionality.
 3. Added template inheritance from base.html, and authorisation.
@@ -39,34 +134,5 @@ Commits:
 29. Added comments to code. Finishing touches to CSS, including password reset forms. 
 30. Started testing.
 31. Completed testing.
-
-Technologies uses:
-Django - 
-Pillow - used to open images in python
-Djang-Forms-Bootstrap - to allow easy rendering of forms
-DJ-Database-url - allows access to postgreSQL instead of standard database driver used in Django
-Psycopg2 - allows adaption to postgreSQL for python
-Whitenoise - hosts static files on Heroku
-Gunicorn - WSGI HTTP server for python
-Stripe - allows us to take bank card payments
-
-Testing:
-
-When customising any of my CSS, I would load the page in developer tools and write the code this way.
-
-
-
-
-
-To ensure my colour scheme did not clash, I loaded my header image into MS Paint, and picked a colour that I liked, and used the colour picker to find the RGB code. I then translated this into the HEX code, and used it where I wanted in my project. I then input the HEX code into https://coolors.co/ to find my colour scheme.
-
-
-Travis - 
-[![Build Status](https://travis-ci.org/sarahcrosby/project-five-django.svg?branch=master)](https://travis-ci.org/sarahcrosby/project-five-django)
-
-
-
-Credits 
-
-background image
-https://coolors.co/ colour scheme
+32. Updated README.
+33. 
