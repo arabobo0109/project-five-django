@@ -25,7 +25,7 @@ def checkout(request):
             total = 0
             for id, quantity in cart.items():
                 product = get_object_or_404(Product, pk=id)
-                total += quantity * product.price
+                total += quantity * product.tribute
                 order_line_item = OrderLineItem(
                     order = order,
                     product = product,

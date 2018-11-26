@@ -25,55 +25,65 @@
   <body>
      
      
-      {% if messages %}
-        <div class="messages-box">
-          {% for message in messages %}
-            {{ message }}
-          {% endfor %}
+    <!--Displays any messages, if there are any-->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          {% if messages %}
+            <div class="messages-box">
+              {% for message in messages %}
+                {{ message }}
+              {% endfor %}
+            </div>
+          {% endif %}
         </div>
-      {% endif %}
+      </div>
+    </div>
    
-
-{% if product_count == 0 %}
-  <p align="center">
-         There is nothing in your cart. <a href="{% url 'products' %}">Please <strong>add</strong> some products.</a>
-  </p>
-{% else %}
-<div class="row row-flex">
-    {% for item in cart_items %}
-    <div class="col-xs-12 col-xs-offset-1 col-sm-offset-0 col-sm-8 col-md-6 col-lg-4 display panel panel-default">
-            <div class="panel-body custom-product-panel">
-            <div class="caption">
-              <img class="img-productpost" src="/media/{{ item.product.image }}">
-              <h3>{{ item.product.name }}</h3>
-              <p class="product-description">{{ item.product.strap }}</p>
-              <p>{{ item.product.tribute }}</p>
-              <p>
-                <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
+  <!-- Main Content -->
+    <div class="container-fluid">
+      <div class="row text-center">
+        <div class="col-12">
+          {% if product_count == 0 %}
+            <p align="center">
+                   There is nothing in your cart. <a href="{% url 'products' %}">Please <strong>add</strong> some products.</a>
+            </p>
+        </div>
+      </div>
+          {% else %}
+          <div class="row">
+              {% for item in cart_items %}
+                <div class="col-8 product-box mx-auto">
+                  <img class="img-productpost" src="/media/{{ item.product.image }}">
+                  <h3>{{ item.product.name }}</h3>
+                  <p class="product-description">{{ item.product.strap }}</p>
+                  <p>Cost per tribute: {{ item.product.tribute }}</p>
+                  <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
                     {% csrf_token %}
                     <div class="form-group">
-                        <label for="exampleInputAmount" class="sr-only">Enter New Qty</label>
-                        <div class="input-group">
-                            <div class="input-group-addon">New Qty</div>
-                            <input name="quantity" type="number" min="0" max="999" class="form-control">
-                            <div class="input-group-addon">{{ item.quantity }}</div>
-                        </div>
+                      <label for="exampleInputAmount" class="sr-only">Enter New Qty</label>
+                      <div class="input-group">
+                        <div class="input-group-addon">New Qty</div>
+                        <input name="quantity" type="number" min="1" max="999" class="form-control">
+                        <div class="input-group-addon">{{ item.quantity }}</div>
+                      </div>
                     </div>
-                    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Amend</button>
-                </form>
-            </p> 
-        </div>
-    </div>
-    </div>
-    </div>
-    {% endfor %}
-</div>
-<div class="custom-checkout">
-    <p>Total</p>
-    <p><span class="glyphicon glyphicon-euro" aria-hidden="true"></span>{{ total }}</p>
-    <a href="{% url 'checkout' %}" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
-</div>
-{% endif %}
+                    <button type="submit" class="btn custom-btn"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Amend</button>
+                  </form>
+                </div>
+              {% endfor %}
+          </div>
+          <div class="row">
+            <div class="col-12">
+                <div class="custom-checkout">
+                  <p>Total:</p>
+                  <p><span class="glyphicon glyphicon-euro" aria-hidden="true"></span>£{{ total }}</p>
+                  <a href="{% url 'checkout' %}" class="btn btn-product" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
+                </div>
+                {% endif %}
+            </div>
+          </div>
+
   </body>
 
 

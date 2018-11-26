@@ -9,6 +9,7 @@ class TestOrder(TestCase):
         item.save()
     
         self.assertEqual(item.full_name, "Testing Tester")
+        self.assertEqual(str(item), '(full_name="Testing Tester", phone_number="0292930302", country="UK", postcode="uwo93oe", town_or_city="Merseyside", street_address1="nowhere", street_address2="definitely nowhere", county="Merseyside", date="2019-12-12")' )
         self.assertEqual(item.phone_number, "0292930302")
         self.assertEqual(item.country, "UK")
         self.assertEqual(item.postcode, "uwo93oe")

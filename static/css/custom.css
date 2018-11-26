@@ -196,6 +196,15 @@
     padding: 5px;
 }
 
+.img-productpost {
+    max-height: 50%;
+    max-width: 50%;
+}
+
+.product-box {
+    border: 1px solid grey;
+    margin: 5px;
+}
 
 /*About*/
 
