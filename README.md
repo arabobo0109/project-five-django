@@ -150,3 +150,4 @@ to the input on the form for adding items to the cart. This resolved the bug, an
 33. README additions. Fixed cart bug. Edited CSS on 'checkout.html' and 'cart.html'. Addressed 'Stripe' bug.
 34. Added more automated tests. Addressed console error messages.
 35. Push to Heroku.
+36. Turned debug mode off.
