@@ -13,30 +13,33 @@
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
               <h1>About</h1>
-              <span class="subheading">A brief introduction to the girl behind the blog</span>
+              <span class="subheading">A brief introduction to the person behind the blog</span>
             </div>
           </div>
         </div>
       </div>
     </header>
-  </head>
 
   <body>
     
-      {% if messages %}
-        <div class="messages-box">
-          {% for message in messages %}
-            {{ message }}
-          {% endfor %}
+    <!--Displays any messages, if there are any-->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          {% if messages %}
+            <div class="messages-box">
+              {% for message in messages %}
+                {{ message }}
+              {% endfor %}
+            </div>
+          {% endif %}
         </div>
-      {% endif %}
-   
+      </div>
+    </div>
 
 
     <!-- Main Content -->
-
-    
-    <div class="container">
+    <div class="container-fluid">
         <div class="img-overlay">
           <img class="img-about" src="/media/img/host/sarah.jpg">
         </div>

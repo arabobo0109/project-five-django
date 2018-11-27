@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
+
+ 
+ <body>
+   
     <!-- Page Header -->
     <header class="masthead" style="background-image: url('/media/img/host/background.jpg')">
       <div class="overlay"></div>
@@ -14,18 +18,20 @@
         </div>
       </div>
     </header>
-  </head>
 
-  <body>
-    
-      {% if messages %}
-        <div class="messages-box">
-          {% for message in messages %}
-            {{ message }}
-          {% endfor %}
+     <!--Displays any messages, if there are any-->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          {% if messages %}
+            <div class="messages-box">
+              {% for message in messages %}
+                {{ message }}
+              {% endfor %}
+            </div>
+          {% endif %}
         </div>
-      {% endif %}
-       
+      </div>
 
     <!-- Main Content -->
     <div class="panel panel-default custom-detail-panel">
@@ -41,21 +47,23 @@
             <p> {{ post.content }} </p>
             
             <p>Posted by: {{post.user }}</p>
-                <p>Project published on: {{ post.published_date }}</p>
-                <p>Number of views: {{ post.views }}</p>
-                <p>Project status: {{ post.get_status_display }}</p>
-                <p>Number of upvotes: {{post.votes }}</p>
+              <p>Project published on: {{ post.published_date }}</p>
+              <p>Number of views: {{ post.views }}</p>
+              <p>Project status: {{ post.get_status_display }}</p>
+              <p>Number of upvotes: {{post.votes }}</p>
                 
-                <p>
-                  <a href="/posts/upvote/{{ post.id }}">
-                  Click here to upvote this project.
-                  </a>
-                </p>
+            <p>
+              <a href="/posts/upvote/{{ post.id }}">
+                Click here to upvote this project.
+              </a>
+            </p>
     
-    </div>
+        </div>
     </div>
     
-    <a class="btn btn-primary" href="{% url 'get_posts' %}">Back</a>
+    <div class="row">
+      <a class="btn custom-btn" href="{% url 'get_posts' %}">Back</a>
+    </div>
     
   </body>
    

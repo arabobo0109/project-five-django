@@ -148,3 +148,4 @@ to the input on the form for adding items to the cart. This resolved the bug, an
 31. Completed testing.
 32. Updated README.
 33. README additions. Fixed cart bug. Edited CSS on 'checkout.html' and 'cart.html'. Addressed 'Stripe' bug.
+34. Added more automated tests. Addressed console error messages.

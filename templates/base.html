@@ -18,14 +18,14 @@
     <link href="{% static 'fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-  
-  </head>
 
     <!-- Custom styles for this template -->
     <link href="{% static 'css/library/clean-blog.min.css' %}" rel="stylesheet">
     
     <!--Custom CSS-->
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    
+  </head>
   
     
      <!-- Navigation -->
@@ -64,7 +64,7 @@
             {% endif %}
             <li>
               <a href="{% url 'view_cart' %}">
-                <i class="fas fa-shopping-cart icon_white"></i>
+                <i class="fas fa-shopping-cart"></i>
                 {% if product_count > 0 %}
                   <label class="badge badge-warning">{{ product_count }}
                 {% endif %}
@@ -80,10 +80,11 @@
     {% block content %}
     {% endblock %}
     
-    <hr>
+ 
     
      <!-- Footer -->
     <footer>
+      <hr>
       <div class="container">
         <div class="row custom-icon">
           <div class="col-lg-8 col-md-10 mx-auto">

@@ -1,10 +1,12 @@
 {% extends 'base.html' %} 
 {% load staticfiles %}
  
- {% block page_title %} Do Life Yourself - Member's Home Page {% endblock %}
+ {% block page_title %} Do Life Yourself - Premium Content {% endblock %}
 
  {% block content %}
 
+  <body>
+    
     <!-- Page Header -->
     <header class="masthead" style="background-image: url('/media/img/host/background.jpg')">
       <div class="overlay"></div>
@@ -19,17 +21,21 @@
         </div>
       </div>
     </header>
-  </head>
-
-  <body>
-
-      {% if messages %}
-        <div class="messages-box">
-          {% for message in messages %}
-            {{ message }}
-          {% endfor %}
+      
+    <!--Displays any messages, if there are any-->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          {% if messages %}
+            <div class="messages-box">
+              {% for message in messages %}
+                {{ message }}
+              {% endfor %}
+            </div>
+          {% endif %}
         </div>
-      {% endif %}
+      </div>
+    </div>
 
     <!-- Main Content -->
     <div class="container-search">

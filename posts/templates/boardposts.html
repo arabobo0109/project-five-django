@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 
+  <body>
+    
      <!--Page Header -->
     <header class="masthead" style="background-image: url('/media/img/host/background.jpg')">
-      
-      
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
@@ -17,17 +17,20 @@
         </div>
       </div>
     </header>
-  </head>
 
-  <body>
-
-      {% if messages %}
-        <div class="messages-box">
-          {% for message in messages %}
-            {{ message }}
-          {% endfor %}
+   <!--Displays any messages, if there are any-->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          {% if messages %}
+            <div class="messages-box">
+              {% for message in messages %}
+                {{ message }}
+              {% endfor %}
+            </div>
+          {% endif %}
         </div>
-      {% endif %}
+      </div>
 
      <!--Main Content -->
       <div class="custom-create-post">
@@ -36,26 +39,26 @@
       
 
  
-<div class="container">
-  <div class="row">
-    {% for post in posts %}
-    <div class="col-md-6 custom-post-preview">
-       <p><h1 class="text-center">
-                {{ post.title }}
-            </p></h1>
-            <p class="text-center">
-              <span>{{ post.content | truncatewords:15 }} </span>
-            </p>
-            <p>
-              <strong>Posted by:</strong> {{ post.user }}
-            </p>
-            <p  class="text-right">
-              <a href="{% url 'post_detail' post.id %}"><i>Read More</i></a>
-            </p>
+  <div class="container">
+    <div class="row">
+      {% for post in posts %}
+      <div class="col-md-6 custom-post-preview">
+         <p><h1 class="text-center">
+            {{ post.title }}
+          </p></h1>
+          <p class="text-center">
+            <span>{{ post.content | truncatewords:15 }} </span>
+          </p>
+          <p>
+            <strong>Posted by:</strong> {{ post.user }}
+          </p>
+          <p  class="text-right">
+            <a href="{% url 'post_detail' post.id %}"><i>Read More</i></a>
+          </p>
+      </div>
+      {% endfor %}
     </div>
-  {% endfor %}
-  </div>
-</div> 
+  </div> 
  
 </body>
    

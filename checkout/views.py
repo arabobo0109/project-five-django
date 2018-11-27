@@ -41,10 +41,10 @@ def checkout(request):
                     card = payment_form.cleaned_data['stripe_id'],
                 )
             except stripe.error.CardError:
-                messages.error(request, "Your card was declined")
+                messages.error(request, "Your card was declined, please try again")
                 
             if customer.paid:
-                messages.error(request, "You have successfully paid")
+                messages.error(request, "Your payment was successful, thank you")
                 request.session['cart'] = {}
                 
                 before_remaining = product.remaining
